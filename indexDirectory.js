@@ -3,8 +3,8 @@
 var fs = require('fs'),
   path = require('path'),
   asyncLib = require('async'),
-  File = require('../classes/File.js'),
-  Dir = require('../classes/Dir.js');
+  File = require('./File.js'),
+  Dir = require('./Dir.js');
 
 /*********************************
  * Not sure what this is here for
