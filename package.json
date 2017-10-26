@@ -1,0 +1,25 @@
+{
+  "name": "index-directory",
+  "version": "1.0.0",
+  "description": "Indexes a directory into an array of flat files.",
+  "main": "indexDirectory.js",
+  "dependencies": {
+    "async": "^2.5.0",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/byuitechops/index-directory.git"
+  },
+  "author": "Joshua McKinney",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/byuitechops/index-directory/issues"
+  },
+  "homepage": "https://github.com/byuitechops/index-directory#readme"
+}
