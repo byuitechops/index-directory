@@ -136,13 +136,22 @@ function getDirFiles(fileListIn, globalPath, getDirFilesCb) {
   });
 }
 
+
+/********************************
+ * Start Here
+ *******************************/
+function indexer(globalPath, cb) {
+  var fileList = [];
+  getDirFiles(fileList, globalPath, cb);
+}
+
 /********************************
  * Alternative for conversion tool
  *******************************/
 function runIndexDirectory(course, cb) {
     course.addModuleReport('indexDirectory');
     //the path passed in will be a folder path so just use makeDir
-    indexDirectory(course.info.unzippedFilepath, (makeDirErr, fileList) => {
+    indexer(course.info.unzippedFilepath, (makeDirErr, fileList) => {
         if (makeDirErr) {
             course.throwFatalErr('indexDirectory', makeDirErr);
             cb(makeDirErr, course);
@@ -154,13 +163,6 @@ function runIndexDirectory(course, cb) {
     });
 }
 
-/********************************
- * Start Here
- *******************************/
-function indexer(globalPath, cb) {
-  var fileList = [];
-  getDirFiles(fileList, globalPath, cb);
-}
 
 exports.index = indexer;
 exports.conversionTool = runIndexDirectory;
