@@ -147,18 +147,18 @@ function indexer(globalPath, cb) {
 /********************************
  * Alternative for conversion tool
  *******************************/
-function runIndexDirectory(course, cb) {
+function runIndexDirectory(course, cb8) {
     course.addModuleReport('indexDirectory');
     //the path passed in will be a folder path so just use makeDir
     indexer(course.info.unzippedFilepath, (makeDirErr, fileList) => {
         if (makeDirErr) {
             course.throwFatalErr('indexDirectory', makeDirErr);
-            cb(makeDirErr, course);
+            cb8(makeDirErr, course);
             return;
         }
         course.content = fileList;
         course.success('indexDirectory', 'Successfully indexed the course');
-        cb(null, course);
+        cb8(null, course);
     });
 }
 
