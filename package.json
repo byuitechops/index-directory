@@ -4,7 +4,7 @@
   "description": "Indexes a directory into an array of flat files.",
   "main": "indexDirectory.js",
   "dependencies": {
-    "async": "^2.5.0",
+    "async": "^2.6.0",
     "cheerio": "^1.0.0-rc.2",
     "fs": "^0.0.1-security",
     "path": "^0.12.7"

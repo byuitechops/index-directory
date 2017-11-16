@@ -8,7 +8,9 @@ module.exports = class File {
         this.name = parsedPath.name + parsedPath.ext;
         this.path = pathIn;
         this.ext = parsedPath.ext;
-        this.dom = cheerio.load(guts);
         this.canEdit = canEdit;
+
+        if (parsedPath.ext) this.dom = cheerio.load(guts, {xmlMode:true});
+        else this.dom = cheerio.load(guts);
     }
 };
