@@ -10,7 +10,13 @@ module.exports = class File {
         this.ext = parsedPath.ext;
         this.canEdit = canEdit;
 
-        if (parsedPath.ext) this.dom = cheerio.load(guts, {xmlMode:true});
-        else this.dom = cheerio.load(guts);
+        var cheerioSettings = {
+            decodeEntities: false
+        };
+
+        if (parsedPath.ext) {
+            cheerioSettings.xmlMode = true;
+        }
+        this.dom = cheerio.load(guts, cheerioSettings);
     }
 };
