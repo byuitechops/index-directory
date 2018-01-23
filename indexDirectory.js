@@ -151,7 +151,7 @@ function runIndexDirectory(course, cb8) {
     //the path passed in will be a folder path so just use makeDir
     indexer(course.info.unzippedFilepath, (makeDirErr, fileList) => {
         if (makeDirErr) {
-            course.FatalError(makeDirErr);
+            course.fatalError(makeDirErr);
             cb8(makeDirErr, course);
             return;
         }
