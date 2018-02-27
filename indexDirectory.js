@@ -1,16 +1,9 @@
 /*eslint-env node, es6*/
-/*eslint no-unused-vars:0, no-console:0*/
+
 var fs = require('fs'),
     path = require('path'),
     asyncLib = require('async'),
     File = require('./File.js');
-
-/*********************************
- * Not sure what this is here for
- *********************************/
-function parseTheDom(guts) {
-    return guts;
-}
 
 /********************************
  * Filter Function used to keep files of certin types
@@ -122,7 +115,6 @@ function getDirFiles(fileListIn, globalPath, getDirFilesCb) {
                 // Go through remaining directories for their files
                 // Just to note if this dir doesn't have any dir (sortedItems.dir = []) then makeDir is not called and dirs = []
                 asyncLib.reduce(sortedItems.dirs, fileListIn, getDirFiles, function (getDirFilesErr, fileListOut) {
-                    var dirOut;
                     if (getDirFilesErr) {
                         getDirFilesCb(getDirFilesErr);
                         return;
