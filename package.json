@@ -22,5 +22,6 @@
   "bugs": {
     "url": "https://github.com/byuitechops/index-directory/issues"
   },
-  "homepage": "https://github.com/byuitechops/index-directory#readme"
+  "homepage": "https://github.com/byuitechops/index-directory#readme",
+  "childType": "shell"
 }
