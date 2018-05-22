@@ -131,14 +131,6 @@ function getDirFiles(fileListIn, globalPath, getDirFilesCb) {
 /********************************
  * Start Here
  *******************************/
-function indexer(globalPath, cb) {
-    var fileList = [];
-    getDirFiles(fileList, globalPath, cb);
-}
-
-/********************************
- * Alternative for conversion tool
- *******************************/
 function runIndexDirectory(course, cb8) {
     //the path passed in will be a folder path so just use makeDir
     indexer(course.info.unzippedPath, (makeDirErr, fileList) => {
@@ -154,5 +146,4 @@ function runIndexDirectory(course, cb8) {
 }
 
 
-exports.index = indexer;
-exports.conversionTool = runIndexDirectory;
+module.exports = runIndexDirectory;
