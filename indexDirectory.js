@@ -127,19 +127,26 @@ function getDirFiles(fileListIn, globalPath, getDirFilesCb) {
     });
 }
 
+function indexer(globalPath, cb) {
+    var fileList = [];
+    getDirFiles(fileList, globalPath, cb);
+}
 
 /********************************
  * Start Here
  *******************************/
 function runIndexDirectory(course, cb8) {
     //the path passed in will be a folder path so just use makeDir
+    console.log('INDEXING');
     indexer(course.info.unzippedPath, (makeDirErr, fileList) => {
         if (makeDirErr) {
             course.fatalError(makeDirErr);
             cb8(makeDirErr, course);
             return;
         }
+
         course.content = fileList;
+        console.log('END');
         course.message('Successfully indexed the course');
         cb8(null, course);
     });
